@@ -7,7 +7,7 @@
 <meta name="description" content="Сообщество людей, которые учатся жить и работать рядом с ИИ. Онлайн и офлайн в Берлине.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500&family=Playfair+Display:wght@700&family=Comfortaa:wght@700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 <style>
   :root {
     --text: 51, 51, 51;
@@ -30,7 +30,7 @@
   .page {
     max-width: 60rem;
     margin: 0 auto;
-    padding: 1.25rem 1.25rem 4rem;
+    padding: clamp(3rem, 12vw, 7rem) 1.25rem 4rem;
   }
   header {
     display: flex;
@@ -111,21 +111,16 @@
   .people img { width: 100%; aspect-ratio: 1; border-radius: 50%; margin-bottom: 0.6rem; }
   .people b { display: block; font-weight: 500; font-size: 0.95rem; line-height: 1.2; }
   .people span { display: block; font-size: 0.8rem; color: rgba(var(--text), .6); }
+  h1 { cursor: default; color: #000; transition: color .25s; }
+  h1 .w { display: inline-block; white-space: nowrap; margin-right: .28em; }
+  h1 .c { display: inline-block; font-weight: 700; }
+  h1 .f0 { font-family: "Playfair Display", serif; }
+  h1 .f1 { font-family: "Comfortaa", sans-serif; }
+  h1 .f2 { font-family: "Oswald", sans-serif; }
 </style>
 </head>
 <body>
 <div class="page">
-  <header>
-    <span class="mark">Жизнь при ИИ</span>
-    <nav>
-      <a href="#about">Описание</a>
-      <a href="#people">Люди</a>
-      <a href="#principles">Принципы</a>
-      <a href="#formats">Форматы</a>
-      <a href="#join">Присоединиться</a>
-    </nav>
-  </header>
-
   <h1>Жизнь при ИИ</h1>
   <div class="row">
     <div class="seg" role="radiogroup" aria-label="Формат">
@@ -195,5 +190,34 @@
     <p><a class="btn" href="https://t.me/zeniasofronov" target="_blank" rel="noopener">Присоединиться</a></p>
   </section>
 </div>
+<script>
+(function () {
+  var h = document.querySelector("h1");
+  var text = h.textContent.trim();
+  h.setAttribute("aria-label", text);
+  h.textContent = "";
+  var i = 0;
+  text.split(" ").forEach(function (word) {
+    var w = document.createElement("span");
+    w.className = "w";
+    w.setAttribute("aria-hidden", "true");
+    word.split("").forEach(function (ch) {
+      var c = document.createElement("span");
+      c.className = "c f" + (i++ % 3);
+      c.textContent = ch;
+      w.appendChild(c);
+    });
+    h.appendChild(w);
+  });
+  var colors = ["#0082ff", "#f0545f", "#00966e", "#e0a100", "#7b5cd6", "#d9480f", "#d6409f"];
+  var current = "";
+  h.addEventListener("pointerenter", function () {
+    var next;
+    do { next = colors[Math.floor(Math.random() * colors.length)]; } while (next === current);
+    current = next;
+    h.style.color = next;
+  });
+})();
+</script>
 </body>
 </html>

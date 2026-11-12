@@ -117,6 +117,10 @@
   h1 .f0 { font-family: "Playfair Display", serif; }
   h1 .f1 { font-family: "Comfortaa", sans-serif; }
   h1 .f2 { font-family: "Oswald", sans-serif; }
+  .meeting { padding: 1.4rem 0; border-top: 1px solid rgba(var(--text), .1); max-width: 34em; }
+  .meeting h3 { margin: 0 0 0.2rem; font-weight: 500; font-size: clamp(1.2rem, 3.8vw, 1.6rem); }
+  .meeting .when { margin: 0 0 0.8rem; font-size: 0.85rem; color: rgba(var(--text), .55); }
+  .meeting p { font-size: 1rem; margin: 0 0 0.6rem; }
 </style>
 </head>
 <body>
@@ -134,23 +138,6 @@
     <p>Мы встречаемся, чтобы обмениваться опытом, задавать вопросы, вместе разбираться в непонятном и пробовать новое.</p>
   </section>
 
-  <section id="people">
-    <h2>Люди</h2>
-    <p>Мы не хотим строить сообщество вокруг одного эксперта. У каждого из нас есть свой опыт, свои задачи и свои способы использования ИИ — и именно из этого складывается общее знание.</p>
-    <p class="label">Сейчас в сообществе</p>
-    <ul class="people">
-      <li><img src="avatars/01.svg" alt="" loading="lazy"><b>Женя Софронов</b></li>
-      <li><img src="avatars/02.svg" alt="" loading="lazy"><b>Юля Коберт</b></li>
-      <li><img src="avatars/03.svg" alt="" loading="lazy"><b>Наташа Притыковская</b></li>
-      <li><img src="avatars/04.svg" alt="" loading="lazy"><b>Елена Федотова</b></li>
-      <li><img src="avatars/05.svg" alt="" loading="lazy"><b>Глеб Калинин</b></li>
-      <li><img src="avatars/06.svg" alt="" loading="lazy"><b>Люся Овчинникова</b></li>
-      <li><img src="avatars/07.svg" alt="" loading="lazy"><b>Александр Кисляков</b></li>
-      <li><img src="avatars/08.svg" alt="" loading="lazy"><b>Юлия Борова</b></li>
-      <li><img src="avatars/09.svg" alt="" loading="lazy"><b>Мария Кузьминова</b></li>
-    </ul>
-  </section>
-
   <section id="principles">
     <h2>Принципы</h2>
     <ul class="items">
@@ -165,6 +152,21 @@
       <li><b>Не только инженеры.</b><span>Нам особенно интересно, как ИИ используют люди самых разных профессий и интересов.</span></li>
       <li><b>И должно быть весело.</b><span>Иначе зачем всё это.</span></li>
     </ul>
+  </section>
+
+  <section id="meetings">
+    <h2>Встречи</h2>
+    <p class="soon">Здесь будут рассказы о прошедших встречах: что делали, кто был, какая обратная связь и что будем делать дальше.</p>
+    <!-- Шаблон карточки встречи (скопировать внутрь секции):
+    <article class="meeting">
+      <h3>Название встречи</h3>
+      <p class="when">Дата · онлайн / Берлин</p>
+      <p><b>Что делали.</b> ...</p>
+      <p><b>Кто был.</b> ...</p>
+      <p><b>Что понравилось и обратная связь.</b> ...</p>
+      <p><b>Что дальше.</b> ...</p>
+    </article>
+    -->
   </section>
 
   <section id="formats">
@@ -186,6 +188,22 @@
     <p>Мы постепенно собираем небольшое сообщество людей, которым интересно не просто следить за развитием ИИ, а разбираться вместе, пробовать и обмениваться опытом.</p>
     <p>Для участия не нужно быть программистом или специалистом по ИИ. Достаточно иметь вопросы, задачи или опыт, которым хочется поделиться.</p>
     <p><a class="btn" href="https://t.me/zeniasofronov" target="_blank" rel="noopener">Присоединиться</a></p>
+  </section>
+
+  <section id="people">
+    <h2>Люди</h2>
+    <p>Мы не хотим строить сообщество вокруг одного эксперта. У каждого из нас есть свой опыт, свои задачи и свои способы использования ИИ — и именно из этого складывается общее знание.</p>
+    <ul class="people">
+      <li><img src="avatars/01.svg" alt="" loading="lazy"><b>Женя Софронов</b></li>
+      <li><img src="avatars/02.svg" alt="" loading="lazy"><b>Юля Коберт</b></li>
+      <li><img src="avatars/03.svg" alt="" loading="lazy"><b>Наташа Притыковская</b></li>
+      <li><img src="avatars/04.svg" alt="" loading="lazy"><b>Елена Федотова</b></li>
+      <li><img src="avatars/05.svg" alt="" loading="lazy"><b>Глеб Калинин</b></li>
+      <li><img src="avatars/06.svg" alt="" loading="lazy"><b>Люся Овчинникова</b></li>
+      <li><img src="avatars/07.svg" alt="" loading="lazy"><b>Александр Кисляков</b></li>
+      <li><img src="avatars/08.svg" alt="" loading="lazy"><b>Юлия Борова</b></li>
+      <li><img src="avatars/09.svg" alt="" loading="lazy"><b>Мария Кузьминова</b></li>
+    </ul>
   </section>
 </div>
 <script>

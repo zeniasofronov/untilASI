@@ -100,9 +100,13 @@
   .items li:first-child { border-top: 0; padding-top: 0; }
   .items b { display: block; font-weight: 500; font-size: clamp(1.1rem, 3.4vw, 1.4rem); margin-bottom: 0.2rem; }
   .items span { display: block; font-size: 0.95rem; color: rgba(var(--text), .75); }
-  .people li { font-size: clamp(1.1rem, 3.4vw, 1.4rem); padding: 0.25rem 0; }
-  .people small { font-size: 0.8rem; color: rgba(var(--text), .55); margin-left: 0.4em; }
   section .label { margin: 1.4rem 0 0.6rem; font-size: 0.8rem; color: rgba(var(--text), .55); }
+
+  .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr)); gap: 1.6rem 1rem; max-width: none; }
+  .people li { padding: 0; font-size: 1rem; }
+  .people img { width: 100%; aspect-ratio: 1; border-radius: 50%; margin-bottom: 0.6rem; }
+  .people b { display: block; font-weight: 500; font-size: 0.95rem; line-height: 1.2; }
+  .people span { display: block; font-size: 0.8rem; color: rgba(var(--text), .6); }
 </style>
 </head>
 <body>
@@ -136,10 +140,15 @@
     <p>Мы не хотим строить сообщество вокруг одного эксперта. У каждого из нас есть свой опыт, свои задачи и свои способы использования ИИ — и именно из этого складывается общее знание.</p>
     <p class="label">Сейчас в сообществе</p>
     <ul class="people">
-      <li>Женя Софронов</li>
-      <li>Юля</li>
-      <li>Наташа Притыковская <small>@pritykovskaya</small></li>
-      <li>Elena Fedotova <small>@le_fed</small></li>
+      <li><img src="avatars/01.svg" alt="" loading="lazy"><b>Женя Софронов</b></li>
+      <li><img src="avatars/02.svg" alt="" loading="lazy"><b>Юля Коберт</b></li>
+      <li><img src="avatars/03.svg" alt="" loading="lazy"><b>Наташа Притыковская</b></li>
+      <li><img src="avatars/04.svg" alt="" loading="lazy"><b>Елена Федотова</b></li>
+      <li><img src="avatars/05.svg" alt="" loading="lazy"><b>Глеб Калинин</b></li>
+      <li><img src="avatars/06.svg" alt="" loading="lazy"><b>Люся Овчинникова</b></li>
+      <li><img src="avatars/07.svg" alt="" loading="lazy"><b>Александр Кисляков</b></li>
+      <li><img src="avatars/08.svg" alt="" loading="lazy"><b>Юлия Борова</b></li>
+      <li><img src="avatars/09.svg" alt="" loading="lazy"><b>Мария Кузьминова</b></li>
     </ul>
   </section>
 

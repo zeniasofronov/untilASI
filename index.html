@@ -71,10 +71,12 @@
     text-decoration: none;
   }
   a.btn { cursor: pointer; }
-  .meta {
-    font-size: 0.8rem;
-    color: rgba(var(--text), .75);
-  }
+  .seg { display: inline-flex; padding: 0.2rem; border-radius: 999px; background: rgba(var(--text), .08); }
+  .seg label { cursor: pointer; user-select: none; }
+  .seg input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .seg span { display: block; padding: 0.45em 1.1em; border-radius: 999px; font-size: 1.05rem; transition: background .2s, color .2s; }
+  .seg input:checked + span { background: rgb(var(--accent)); color: #fff; box-shadow: 0 0.4em 1em -0.3em rgba(var(--accent), .6); }
+  .seg input:focus-visible + span { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; }
   .lead {
     margin: 1.6rem 0 0;
     font-size: clamp(1.25rem, 4.2vw, 1.9rem);
@@ -126,8 +128,10 @@
 
   <h1>Жизнь при ИИ</h1>
   <div class="row">
-    <span class="btn">Скоро</span>
-    <span class="meta">Онлайн и офлайн в Берлине</span>
+    <div class="seg" role="radiogroup" aria-label="Формат">
+      <label><input type="radio" name="format" value="online" checked><span>Онлайн</span></label>
+      <label><input type="radio" name="format" value="berlin"><span>Офлайн в Берлине</span></label>
+    </div>
   </div>
 
   <section id="about">

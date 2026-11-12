@@ -217,6 +217,9 @@
     current = next;
     h.style.color = next;
   });
+  h.addEventListener("pointerleave", function () {
+    h.style.color = "";
+  });
 })();
 </script>
 </body>

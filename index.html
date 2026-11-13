@@ -26,6 +26,7 @@
     font-family: "Onest", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     font-weight: 400;
     line-height: 1.35;
+    font-size: 1rem;
   }
   .page {
     max-width: 60rem;
@@ -37,12 +38,6 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: clamp(3rem, 12vw, 7rem);
-  }
-  .mark {
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: -0.01em;
-    color: rgb(var(--accent));
   }
   h1 {
     margin: 0 0 1.2rem;
@@ -64,7 +59,7 @@
     border-radius: 0.9em;
     background: rgb(var(--accent));
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 400;
     box-shadow: 0 0.5em 1.2em -0.3em rgba(var(--accent), .55);
     cursor: default;
@@ -74,43 +69,23 @@
   .seg { display: inline-flex; padding: 0.2rem; border-radius: 999px; background: rgba(var(--text), .08); }
   .seg label { cursor: pointer; user-select: none; }
   .seg input { position: absolute; opacity: 0; width: 0; height: 0; }
-  .seg span { display: block; padding: 0.45em 1.1em; border-radius: 999px; font-size: 1.05rem; transition: background .2s, color .2s; }
+  .seg span { display: block; padding: 0.45em 1.1em; border-radius: 999px; font-size: 1rem; transition: background .2s, color .2s; }
   .seg input:checked + span { background: rgb(var(--accent)); color: #fff; box-shadow: 0 0.4em 1em -0.3em rgba(var(--accent), .6); }
   .seg input:focus-visible + span { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; }
-  .lead {
-    margin: 1.6rem 0 0;
-    font-size: clamp(1.25rem, 4.2vw, 1.9rem);
-    line-height: 1.3;
-    max-width: 28em;
-  }
-  .note {
-    margin: 1.4rem 0 0;
-    font-size: 0.9rem;
-    color: rgba(var(--text), .6);
-  }
 
   html { scroll-behavior: smooth; }
-  nav { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: 0.8rem; }
-  nav a { color: rgba(var(--text), .75); text-decoration: none; }
-  nav a:hover { color: rgb(var(--accent)); }
   header { flex-wrap: wrap; gap: 0.8rem 1.5rem; }
   section { padding: 2.2rem 0 0.4rem; border-top: 1px solid rgba(var(--text), .12); margin-top: 2.6rem; scroll-margin-top: 1rem; }
   h2 { margin: 0 0 1rem; font-weight: 300; font-size: clamp(1.8rem, 6vw, 2.8rem); letter-spacing: -0.02em; line-height: 1.1; }
-  section p { margin: 0 0 1rem; max-width: 28em; font-size: clamp(1.1rem, 3.4vw, 1.4rem); }
+  section p { margin: 0 0 1rem; max-width: 28em; font-size: 1rem; }
   section .soon { color: rgba(var(--text), .55); }
 
   section ul { list-style: none; margin: 0; padding: 0; max-width: 34em; }
-  .items li { padding: 1rem 0; border-top: 1px solid rgba(var(--text), .1); }
-  .items li:first-child { border-top: 0; padding-top: 0; }
-  .items b { display: block; font-weight: 500; font-size: clamp(1.1rem, 3.4vw, 1.4rem); margin-bottom: 0.2rem; }
-  .items span { display: block; font-size: 0.95rem; color: rgba(var(--text), .75); }
-  section .label { margin: 1.4rem 0 0.6rem; font-size: 0.8rem; color: rgba(var(--text), .55); }
 
   .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr)); gap: 1.6rem 1rem; max-width: none; }
   .people li { padding: 0; font-size: 1rem; }
   .people img { width: 100%; aspect-ratio: 1; border-radius: 50%; margin-bottom: 0.6rem; }
-  .people b { display: block; font-weight: 500; font-size: 0.95rem; line-height: 1.2; hyphens: auto; overflow-wrap: anywhere; }
-  .people span { display: block; font-size: 0.8rem; color: rgba(var(--text), .6); }
+  .people b { display: block; font-weight: 500; font-size: 1rem; line-height: 1.2; hyphens: auto; overflow-wrap: anywhere; }
   h1 { cursor: default; color: #000; transition: color .25s; }
   h1 .w { display: inline-block; white-space: nowrap; margin-right: .28em; }
   h1 .c { display: inline-block; font-weight: 700; }
@@ -118,11 +93,11 @@
   h1 .f1 { font-family: "Comfortaa", sans-serif; }
   h1 .f2 { font-family: "Oswald", sans-serif; }
   .meeting { padding: 1.4rem 0; border-top: 1px solid rgba(var(--text), .1); max-width: 34em; }
-  .meeting h3 { margin: 0 0 0.2rem; font-weight: 500; font-size: clamp(1.2rem, 3.8vw, 1.6rem); }
-  .meeting .when { margin: 0 0 0.8rem; font-size: 0.85rem; color: rgba(var(--text), .55); }
+  .meeting h3 { margin: 0 0 0.2rem; font-size: 1rem; font-weight: 700; }
+  .meeting .when { margin: 0 0 0.8rem; font-size: 1rem; color: rgba(var(--text), .55); }
   .meeting p { font-size: 1rem; margin: 0 0 0.6rem; }
   .pills { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: none; }
-  .pills li { padding: 0.55em 1.1em; border-radius: 999px; font-size: clamp(1rem, 3.2vw, 1.2rem); line-height: 1.25; color: #222; }
+  .pills li { padding: 0.55em 1.1em; border-radius: 999px; font-size: 1rem; line-height: 1.25; color: #222; }
   .pills .c0 { background: #cfe3ff; }
   .pills .c1 { background: #ffd9d9; }
   .pills .c2 { background: #d9f0d8; }

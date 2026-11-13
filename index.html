@@ -96,15 +96,6 @@
   .meeting h3 { margin: 0 0 0.2rem; font-size: 1rem; font-weight: 700; }
   .meeting .when { margin: 0 0 0.8rem; font-size: 1rem; color: rgba(var(--text), .55); }
   .meeting p { font-size: 1rem; margin: 0 0 0.6rem; }
-  .pills { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: none; }
-  .pills li { padding: 0.55em 1.1em; border-radius: 999px; font-size: 1rem; line-height: 1.25; color: #222; }
-  .pills .c0 { background: #cfe3ff; }
-  .pills .c1 { background: #ffd9d9; }
-  .pills .c2 { background: #d9f0d8; }
-  .pills .c3 { background: #fff1b8; }
-  .pills .c4 { background: #e5dcf7; }
-  .pills .c5 { background: #ffe1c9; }
-  .pills .c6 { background: #f3d6ee; }
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 0.9rem; max-width: none; margin-top: 1.4rem; }
   .cards li { display: flex; flex-direction: column; gap: 0.6rem; padding: 1.1rem 1.2rem 1.3rem; border-radius: 0.9rem; box-shadow: 0 1px 0 rgba(var(--text), .08); transition: transform .15s, box-shadow .15s; }
   .cards li:hover { transform: translateY(-2px); box-shadow: 0 0.5em 1.2em -0.5em rgba(var(--text), .35); }
@@ -118,6 +109,14 @@
   .cards .k4 { background: #e5dcf7; }
   .cards .k5 { background: #ffe1c9; }
   .cards .k6 { background: #f3d6ee; }
+  .scales { display: grid; grid-template-columns: 1fr; gap: 1.8rem; max-width: none; }
+  .sc h3 { margin: 0 0 0.9rem; font-size: 1rem; font-weight: 700; line-height: 1.3; }
+  .sc .bar { position: relative; height: 0.3rem; border-radius: 999px; background: rgba(var(--text), .15); }
+  .sc .bar i { position: absolute; top: 50%; left: var(--v); width: 1.3rem; height: 1.3rem; margin: -0.65rem 0 0 -0.65rem; border-radius: 50%; background: var(--dot); box-shadow: 0 0 0 0.25rem #fff, 0 2px 6px rgba(0,0,0,.25); }
+  .sc .poles { display: flex; justify-content: space-between; gap: 1rem; margin-top: 0.9rem; font-size: 1rem; line-height: 1.25; color: rgba(var(--text), .65); }
+  .sc .poles span:last-child { text-align: right; }
+  .sc.c0 { --dot: #0082ff; } .sc.c1 { --dot: #f0545f; } .sc.c2 { --dot: #00966e; } .sc.c3 { --dot: #e0a100; }
+  .sc.c4 { --dot: #7b5cd6; } .sc.c5 { --dot: #d9480f; } .sc.c6 { --dot: #d6409f; }
 </style>
 </head>
 <body>
@@ -137,22 +136,82 @@
 
   <section id="principles">
     <h2>Принципы</h2>
-    <ul class="pills">
-      <li class="c0">Отталкиваемся от задач, а не от инструментов</li>
-      <li class="c1">Разбираемся в конкретных темах, а не во всём сразу</li>
-      <li class="c2">Задаём любые вопросы, даже самые простые</li>
-      <li class="c3">Говорим не только о технологиях, но и о жизни с ними</li>
-      <li class="c4">Учимся друг у друга, а не только у экспертов</li>
-      <li class="c5">Пробуем, а не только обсуждаем</li>
-      <li class="c6">Двигаемся маленькими шагами</li>
-      <li class="c0">Поддерживаем и уважаем друг друга</li>
-      <li class="c1">Объединяем людей разных профессий, а не только инженеров</li>
-      <li class="c2">Получаем удовольствие от процесса</li>
-      <li class="c3">Приходим с разным опытом</li>
-      <li class="c4">Учимся в своём темпе</li>
-      <li class="c5">Поддерживаем, а не оцениваем</li>
-      <li class="c6">Делимся опытом, не дожидаясь, пока станем экспертами</li>
-      <li class="c0">Общаемся без осуждения, давления и соревновательности</li>
+    <ul class="scales">
+      <li class="sc c0" style="--v:90%">
+        <h3>Отталкиваемся от задач, а не от инструментов</h3>
+        <div class="bar" role="img" aria-label="Отталкиваемся от задач, а не от инструментов: ближе к «Задачи»"><i></i></div>
+        <div class="poles"><span>Инструменты</span><span>Задачи</span></div>
+      </li>
+      <li class="sc c1" style="--v:80%">
+        <h3>Разбираемся в конкретных темах, а не во всём сразу</h3>
+        <div class="bar" role="img" aria-label="Разбираемся в конкретных темах, а не во всём сразу: ближе к «Конкретная тема»"><i></i></div>
+        <div class="poles"><span>Всё сразу</span><span>Конкретная тема</span></div>
+      </li>
+      <li class="sc c2" style="--v:90%">
+        <h3>Задаём любые вопросы, даже самые простые</h3>
+        <div class="bar" role="img" aria-label="Задаём любые вопросы, даже самые простые: ближе к «Любые вопросы»"><i></i></div>
+        <div class="poles"><span>Только умные вопросы</span><span>Любые вопросы</span></div>
+      </li>
+      <li class="sc c3" style="--v:60%">
+        <h3>Говорим не только о технологиях, но и о жизни с ними</h3>
+        <div class="bar" role="img" aria-label="Говорим не только о технологиях, но и о жизни с ними: ближе к «Жизнь с ними»"><i></i></div>
+        <div class="poles"><span>Технологии</span><span>Жизнь с ними</span></div>
+      </li>
+      <li class="sc c4" style="--v:80%">
+        <h3>Учимся друг у друга, а не только у экспертов</h3>
+        <div class="bar" role="img" aria-label="Учимся друг у друга, а не только у экспертов: ближе к «Друг у друга»"><i></i></div>
+        <div class="poles"><span>Только у экспертов</span><span>Друг у друга</span></div>
+      </li>
+      <li class="sc c5" style="--v:70%">
+        <h3>Пробуем, а не только обсуждаем</h3>
+        <div class="bar" role="img" aria-label="Пробуем, а не только обсуждаем: ближе к «Пробуем»"><i></i></div>
+        <div class="poles"><span>Обсуждаем</span><span>Пробуем</span></div>
+      </li>
+      <li class="sc c6" style="--v:90%">
+        <h3>Двигаемся маленькими шагами</h3>
+        <div class="bar" role="img" aria-label="Двигаемся маленькими шагами: ближе к «Маленькие шаги»"><i></i></div>
+        <div class="poles"><span>Большие прыжки</span><span>Маленькие шаги</span></div>
+      </li>
+      <li class="sc c0" style="--v:90%">
+        <h3>Поддерживаем и уважаем друг друга</h3>
+        <div class="bar" role="img" aria-label="Поддерживаем и уважаем друг друга: ближе к «Поддержка и уважение»"><i></i></div>
+        <div class="poles"><span>Скепсис</span><span>Поддержка и уважение</span></div>
+      </li>
+      <li class="sc c1" style="--v:80%">
+        <h3>Объединяем людей разных профессий, а не только инженеров</h3>
+        <div class="bar" role="img" aria-label="Объединяем людей разных профессий, а не только инженеров: ближе к «Разные профессии»"><i></i></div>
+        <div class="poles"><span>Только инженеры</span><span>Разные профессии</span></div>
+      </li>
+      <li class="sc c2" style="--v:80%">
+        <h3>Получаем удовольствие от процесса</h3>
+        <div class="bar" role="img" aria-label="Получаем удовольствие от процесса: ближе к «Удовольствие от процесса»"><i></i></div>
+        <div class="poles"><span>Только результат</span><span>Удовольствие от процесса</span></div>
+      </li>
+      <li class="sc c3" style="--v:90%">
+        <h3>Приходим с разным опытом</h3>
+        <div class="bar" role="img" aria-label="Приходим с разным опытом: ближе к «Разный опыт»"><i></i></div>
+        <div class="poles"><span>Одинаковый опыт</span><span>Разный опыт</span></div>
+      </li>
+      <li class="sc c4" style="--v:90%">
+        <h3>Учимся в своём темпе</h3>
+        <div class="bar" role="img" aria-label="Учимся в своём темпе: ближе к «Свой темп»"><i></i></div>
+        <div class="poles"><span>Общий темп</span><span>Свой темп</span></div>
+      </li>
+      <li class="sc c5" style="--v:90%">
+        <h3>Поддерживаем, а не оцениваем</h3>
+        <div class="bar" role="img" aria-label="Поддерживаем, а не оцениваем: ближе к «Поддерживаем»"><i></i></div>
+        <div class="poles"><span>Оцениваем</span><span>Поддерживаем</span></div>
+      </li>
+      <li class="sc c6" style="--v:90%">
+        <h3>Делимся опытом, не дожидаясь, пока станем экспертами</h3>
+        <div class="bar" role="img" aria-label="Делимся опытом, не дожидаясь, пока станем экспертами: ближе к «Делимся сразу»"><i></i></div>
+        <div class="poles"><span>Когда станем экспертами</span><span>Делимся сразу</span></div>
+      </li>
+      <li class="sc c0" style="--v:90%">
+        <h3>Общаемся без осуждения, давления и соревновательности</h3>
+        <div class="bar" role="img" aria-label="Общаемся без осуждения, давления и соревновательности: ближе к «Без осуждения»"><i></i></div>
+        <div class="poles"><span>Давление и соревнование</span><span>Без осуждения</span></div>
+      </li>
     </ul>
   </section>
 

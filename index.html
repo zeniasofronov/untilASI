@@ -65,7 +65,23 @@
     cursor: default;
     text-decoration: none;
   }
-  a.btn { cursor: pointer; }
+  a.btn {
+    cursor: pointer;
+    padding: 0.8em 2.2em;
+    border-radius: 999px;
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0,0,0,.35);
+    background: linear-gradient(100deg, #0082ff, #00b8a9, #2fbf71, #e0a100, #f0883e, #f0545f, #d6409f, #7b5cd6, #0082ff);
+    background-size: 200% 100%;
+    animation: rainbow 6s linear infinite;
+    box-shadow: 0 0.7em 1.8em -0.4em rgba(214, 64, 159, .55);
+    transition: transform .15s;
+  }
+  @keyframes rainbow { to { background-position: 200% 50%; } }
+  @media (prefers-reduced-motion: reduce) { a.btn { animation: none; } }
+  a.btn:hover { transform: translateY(-3px) scale(1.03); animation-duration: 2.5s; }
+  a.btn:focus-visible { outline: 3px solid #7b5cd6; outline-offset: 3px; }
   .seg { display: inline-flex; padding: 0.2rem; border-radius: 999px; background: rgba(var(--text), .08); }
   .seg label { cursor: pointer; user-select: none; }
   .seg input { position: absolute; opacity: 0; width: 0; height: 0; }
@@ -117,6 +133,18 @@
   .sc .poles span:last-child { text-align: right; }
   .sc.c0 { --dot: #0082ff; } .sc.c1 { --dot: #f0545f; } .sc.c2 { --dot: #00966e; } .sc.c3 { --dot: #e0a100; }
   .sc.c4 { --dot: #7b5cd6; } .sc.c5 { --dot: #d9480f; } .sc.c6 { --dot: #d6409f; }
+  .pblock { margin-top: 2rem; }
+  .pblock h3 { margin: 0 0 0.4rem; font-size: 1rem; font-weight: 700; }
+  .pblock p { margin: 0 0 0.9rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; max-width: none; }
+  .tags li { padding: 0.4em 1em; border-radius: 999px; font-size: 1rem; line-height: 1.25; color: #222; }
+  .tags .t0 { background: #cfe3ff; }
+  .tags .t1 { background: #ffd9d9; }
+  .tags .t2 { background: #d9f0d8; }
+  .tags .t3 { background: #fff1b8; }
+  .tags .t4 { background: #e5dcf7; }
+  .tags .t5 { background: #ffe1c9; }
+  .tags .t6 { background: #f3d6ee; }
 </style>
 </head>
 <body>
@@ -136,6 +164,27 @@
 
   <section id="principles">
     <h2>Принципы</h2>
+        <div class="pblock">
+      <h3>Люди</h3>
+      <p>Мы объединяем людей разных профессий, интересов и уровней подготовки. Необязательно быть айтишником, экспертом по ИИ или иметь большой опыт. Нам важно, чтобы в сообществе были разные люди с разными взглядами и возможностями.</p>
+      <ul class="tags"><li class="t0">Не только айтишники</li><li class="t1">Не эксперты по ИИ</li><li class="t2">Не клуб криптобратанов</li><li class="t3">Разные люди</li></ul>
+    </div>
+    <div class="pblock">
+      <h3>Фокус</h3>
+      <p>Нас интересуют не столько технологии и инструменты сами по себе, сколько их применение в работе и жизни. Мы разбираем конкретные задачи, но обсуждаем и большие вопросы: как ИИ меняет наше мышление, отношения и общество.</p>
+      <ul class="tags"><li class="t4">Задачи важнее инструментов</li><li class="t5">Взаимодействие человека и ИИ</li><li class="t6">Без FOMO</li></ul>
+    </div>
+    <div class="pblock">
+      <h3>Практика</h3>
+      <p>Мы не только обсуждаем идеи, но и пробуем их применять. Учимся друг у друга, делимся находками и ошибками, даже если пока не считаем себя экспертами. Экспериментируем, двигаемся маленькими шагами и в собственном темпе.</p>
+      <ul class="tags"><li class="t0">Не только теория, но дело</li><li class="t1">Маленькие эксперименты</li><li class="t2">Учимся друг у друга</li><li class="t3">Можно не быть экспертом</li></ul>
+    </div>
+    <div class="pblock">
+      <h3>Вайб</h3>
+      <p>Мы хотим, чтобы здесь было интересно, весело и безопасно задавать любые вопросы, даже самые простые. Поддерживаем друг друга, а не оцениваем. Общаемся с уважением, без осуждения, давления и соревнования.</p>
+      <ul class="tags"><li class="t4">Тупые вопросы разрешены</li><li class="t5">Без гонки и давления</li><li class="t6">Фан обязателен</li></ul>
+    </div>
+    <!-- ВРЕМЕННО СКРЫТО: шкалы принципов
     <ul class="scales">
       <li class="sc c0" style="--v:90%">
         <h3>Отталкиваемся от задач, а не от инструментов</h3>
@@ -213,6 +262,7 @@
         <div class="poles"><span>Давление и соревнование</span><span>Без осуждения</span></div>
       </li>
     </ul>
+    -->
   </section>
 
   <!-- ВРЕМЕННО СКРЫТО
@@ -275,9 +325,11 @@
   -->
 
   <section id="join">
+    <!-- ВРЕМЕННО СКРЫТО
     <h2>Присоединиться</h2>
     <p>Мы постепенно собираем небольшое сообщество людей, которым интересно не просто следить за развитием ИИ, а разбираться вместе, пробовать и обмениваться опытом.</p>
     <p>Для участия не нужно быть программистом или специалистом по ИИ. Достаточно иметь вопросы, задачи или опыт, которым хочется поделиться.</p>
+    -->
     <p><a class="btn" href="https://t.me/zeniasofronov" target="_blank" rel="noopener">Присоединиться</a></p>
   </section>
 </div>

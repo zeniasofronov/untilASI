@@ -138,6 +138,12 @@
   .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 0 2.5rem; }
   .pair .pblock { min-width: 0; }
   #principles > hr { border: 0; border-top: 1px solid rgba(var(--text), .12); margin: 2.6rem 0 0; }
+  @media (max-width: 640px) {
+    :root { font-size: clamp(19px, 5.4vw, 22px); }
+    h1 { line-height: 1.05; margin-bottom: 1.6rem; }
+    h1 .w:first-child { display: block; }
+    h1 .w:last-child { margin-right: 0; }
+  }
 </style>
 </head>
 <body>
@@ -366,6 +372,23 @@
       c.style.color = "";
     });
   });
+  /* on phones: "Кики" on line one, "и бубы" on line two, scaled to fill the full width */
+  var mq = window.matchMedia("(max-width: 640px)");
+  function fit() {
+    if (!mq.matches) { h.style.fontSize = ""; return; }
+    h.style.fontSize = "100px";
+    var ws = h.querySelectorAll(".w");
+    var l1 = ws[0].getBoundingClientRect().width;
+    var l2 = 0;
+    for (var i = 1; i < ws.length; i++) {
+      l2 += ws[i].getBoundingClientRect().width;
+      if (i < ws.length - 1) l2 += parseFloat(getComputedStyle(ws[i]).marginRight);
+    }
+    h.style.fontSize = Math.floor(100 * h.clientWidth / Math.max(l1, l2) * 0.99) + "px";
+  }
+  fit();
+  window.addEventListener("resize", fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 })();
 </script>
 </body>

@@ -144,6 +144,11 @@
     h1 .w:first-child { display: block; }
     h1 .w:last-child { margin-right: 0; }
   }
+  .tags li.add { padding: 0; background: none; }
+  .tags .add button { display: inline-flex; align-items: center; padding: 0.4em 1em; border: 0; border-radius: 999px; background: #fff; box-shadow: inset 0 0 0 1.5px #333; color: #333; font: inherit; font-weight: 500; line-height: 1.25; cursor: pointer; transition: background .15s, color .15s; }
+  .tags .add button svg { width: 0.7em; height: 0.7em; margin-right: 0.45em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+  .tags .add button:hover { background: #333; color: #fff; }
+  .tags .add button:focus-visible { outline: 2px solid #333; outline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -168,29 +173,29 @@
     <div class="pblock">
       <h3>Разные люди</h3>
       <p>Хочется, чтобы были люди разных профессий, с разными контекстами, с разными интересами и с разными экспертизами. Необязательно быть айтишником, экспертом по ИИ или иметь большой опыт. У каждого есть свой опыт, которым можно поделиться.</p>
-      <ul class="tags"><li class="t0">Разные люди 😍</li><li class="t1">Разные контексты</li><li class="t2">Разные экспертизы</li><li class="t3">Разные профессии</li><li class="t4">Разный опыт</li><li class="t5">5 из 10</li><li class="t6">Можно быть не экспертом</li><li class="t0">Не только айтишники</li><li class="t1">Меньше роль экспертов</li><li class="t2">Больше роль сообщества</li></ul>
+      <ul class="tags"><li class="t0">Разные люди 😍</li><li class="t1">Разные контексты</li><li class="t2">Разные экспертизы</li><li class="t3">Разные профессии</li><li class="t4">Разный опыт</li><li class="t5">5 из 10</li><li class="t6">Можно быть не экспертом</li><li class="t0">Не только айтишники</li><li class="t1">Меньше роль экспертов</li><li class="t2">Больше роль сообщества</li><li class="add"><button type="button"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9"/></svg>Добавить</button></li></ul>
     </div>
     <div class="pblock">
       <h3>Вайб</h3>
       <p>Хочется, чтобы вместе было интересно, весело и спокойно. Общаемся с уважением и поддерживаем друг друга без оценок, давления и соревнования. Можно задавать любые вопросы.</p>
-      <ul class="tags"><li class="t3">Тупые вопросы 😍</li><li class="t4">Фан и угар</li><li class="t5">Своя скорость</li><li class="t6">Маленькие шаги</li><li class="t0">Поддержка</li></ul>
+      <ul class="tags"><li class="t3">Тупые вопросы 😍</li><li class="t4">Фан и угар</li><li class="t5">Своя скорость</li><li class="t6">Маленькие шаги</li><li class="t0">Поддержка</li><li class="add"><button type="button"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9"/></svg>Добавить</button></li></ul>
     </div>
     <hr>
     <div class="pblock">
       <h3>Как использовать ИИ</h3>
       <p>Хочется обсуждать прикладные задачи. Начинаем с того, что хочется сделать, и разбираемся, где ИИ может помочь. Смотрим, как это происходит на практике, что уже получилось и где возникли сложности.</p>
-      <ul class="tags"><li class="t1">Своя задача</li><li class="t2">Своя область</li><li class="t3">Заземление задач 😍</li><li class="t4">Обмен опытом</li><li class="t5">Прикладные навыки</li></ul>
+      <ul class="tags"><li class="t1">Своя задача</li><li class="t2">Своя область</li><li class="t3">Заземление задач 😍</li><li class="t4">Обмен опытом</li><li class="t5">Прикладные навыки</li><li class="add"><button type="button"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9"/></svg>Добавить</button></li></ul>
     </div>
     <div class="pblock">
       <h3>Как жить с ИИ</h3>
       <p>Хочется обсуждать, что происходит с нами самими, когда ИИ становится частью жизни. Как учиться? Как справляться с неопределённостью? Как чувствовать себя лучше?</p>
-      <ul class="tags"><li class="t6">Меньше FOMO</li><li class="t0">Меньше FOMAT</li><li class="t1">Как учиться</li><li class="t2">Как справляться</li><li class="t3">Авторство</li><li class="t4">Вкус</li><li class="t5">Агентность</li><li class="t6">Кругозор</li><li class="t0">Кентавры</li><li class="t1">Киборги</li><li class="t2">Психологические навыки</li><li class="t3">Переносимые навыки</li></ul>
+      <ul class="tags"><li class="t6">Меньше FOMO</li><li class="t0">Меньше FOMAT</li><li class="t1">Как учиться</li><li class="t2">Как справляться</li><li class="t3">Авторство</li><li class="t4">Вкус</li><li class="t5">Агентность</li><li class="t6">Кругозор</li><li class="t0">Кентавры</li><li class="t1">Киборги</li><li class="t2">Психологические навыки</li><li class="t3">Переносимые навыки</li><li class="add"><button type="button"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9"/></svg>Добавить</button></li></ul>
     </div>
     <hr>
     <div class="pblock">
       <h3>Форматы</h3>
       <p>Хочется пробовать разные способы встречаться и учиться друг у друга. Формат выбираем под задачу встречи. Отталкиваемся от задач и проблем.</p>
-      <ul class="tags"><li class="t4">Маленькие эксперименты</li><li class="t5">Обмен проблемами</li><li class="t6">Обмен опытом</li><li class="t0">Solution Focused</li><li class="t1">Что уже получается</li><li class="t2">На один пункт лучше</li><li class="t3">Недопечённые идеи 😍</li><li class="t4">Групповой формат</li></ul>
+      <ul class="tags"><li class="t4">Маленькие эксперименты</li><li class="t5">Обмен проблемами</li><li class="t6">Обмен опытом</li><li class="t0">Solution Focused</li><li class="t1">Что уже получается</li><li class="t2">На один пункт лучше</li><li class="t3">Недопечённые идеи 😍</li><li class="t4">Групповой формат</li><li class="add"><button type="button"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9"/></svg>Добавить</button></li></ul>
     </div>
     <!-- ВРЕМЕННО СКРЫТО: шкалы принципов
     <ul class="scales">
